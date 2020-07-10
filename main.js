@@ -83,6 +83,28 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
 
+function timestamp_get(url, callback) {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //alert('responseText: ' + xmlhttp.responseText);
+    try {
+        var date = xmlhttp.responseText;
+        //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
+        //alert(headers['X-Rate-Limit-Remaining']);
+    } catch(err) {
+        alert(err.message + " in " + xmlhttp.responseText);
+        return;
+    }
+    callback(date);
+}
+
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+}
+
 ip_get('https://api.ipify.org/', function(data) {
 var ip = data;
 loc_get('https://ipapi.co/' + ip + '/json', function(data) {
@@ -90,13 +112,14 @@ var latitude = data['latitude'];
 var longitude = data['longitude'];
 document.getElementById('y_lat').innerHTML = "<p id='y_lat'>Your latitude : " + data['latitude'] + "°</p>";
 document.getElementById('y_lon').innerHTML = "<p id='y_lat'>Your longitude : " + data['longitude'] + "°</p>";
-prev_get('http://api.open-notify.org/iss-pass.json?lat=43.5167&lon=4.9833&n=1', function(data) {
-  alert('ok');
-  var response = data['response'];
-  var prevision = response[0];
+prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['latitude'] + '/' + data['longitude'] + '/10/10/10/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
+  var response = data['passes'];
+  var prevision = response['0'];
   var duration = prevision['duration'];
-  var timestamp = prevision['timestamp'];
-  alert(prevision);
+  var timestamp = prevision['startUTC'];
+  timestamp_get('https://showcase.api.linx.twenty57.net/UnixTime/fromunix?timestamp=' + timestamp, function(data) {
+    document.getElementById('next_pass').innerHTML = "<p id='next_pass'>Next pass : " + data + "</p>";
+  });
   document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + duration + " seconds</p>";
 });
 });
@@ -130,4 +153,3 @@ document.getElementById('solar_lon_table').innerHTML = "<p id='solar_lon_table'>
 });
 }
 var t=setInterval(actualize,1500);
-
