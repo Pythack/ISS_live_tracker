@@ -10,7 +10,7 @@ html {
 h1 {
   position: absolute;
   top: 0.5cm;
-  left: 24cm;
+  left: 22cm;
   font-size: 30;
   color: #cccccc;
 }
@@ -18,26 +18,26 @@ h1 {
 #info_div {
   position: absolute;
   top: 3cm;
-  left: 1cm;
+  right: 1cm;
   font-size: 17;
   background-color: #00278b;
   border-radius: 30px;
-  width: 22cm;
+  width: 10cm;
   height: 9.5cm;
   padding: 20px;
   padding-left: 50px;
   box-shadow: 2px 2px #001c65;
 }
 
-#map_div {
+#pred_div {
   position: absolute;
-  top: 3cm;
+  bottom: 1cm;
   right: 1cm;
   font-size: 23;
   background-color: #00278b;
   border-radius: 30px;
-  width: 22cm;
-  height: 9.5cm;
+  width: 10cm;
+  height: 7.5cm;
   padding: 20px;
   padding-left: 50px;
   box-shadow: 2px 2px #001c65;
