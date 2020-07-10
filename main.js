@@ -4,20 +4,103 @@ xmlhttp.onreadystatechange = function() {
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
     //alert('responseText: ' + xmlhttp.responseText);
     try {
-        var data = JSON.parse(xmlhttp.responseText);
+        var data_iss = JSON.parse(xmlhttp.responseText);
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
         alert(err.message + " in " + xmlhttp.responseText);
         return;
     }
-    callback(data);
+    callback(data_iss);
 }
 };
 
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
+
+function ip_get(url, callback) {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //alert('responseText: ' + xmlhttp.responseText);
+    try {
+        var ip = xmlhttp.responseText;
+        //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
+        //alert(headers['X-Rate-Limit-Remaining']);
+    } catch(err) {
+        alert(err.message + " in " + xmlhttp.responseText);
+        return;
+    }
+    callback(ip);
+}
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+}
+
+function loc_get(url, callback) {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //alert('responseText: ' + xmlhttp.responseText);
+    try {
+        var loc = JSON.parse(xmlhttp.responseText);
+        //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
+        //alert(headers['X-Rate-Limit-Remaining']);
+    } catch(err) {
+        alert(err.message + " in " + xmlhttp.responseText);
+        return;
+    }
+    callback(loc);
+}
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+}
+
+function prev_get(url, callback) {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //alert('responseText: ' + xmlhttp.responseText);
+    try {
+        var prevision = JSON.parse(xmlhttp.responseText);
+        //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
+        //alert(headers['X-Rate-Limit-Remaining']);
+    } catch(err) {
+        alert(err.message + " in " + xmlhttp.responseText);
+        return;
+    }
+    callback(prevision);
+}
+
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+}
+
+ip_get('https://api.ipify.org/', function(data) {
+var ip = data;
+loc_get('https://ipapi.co/' + ip + '/json', function(data) {
+var latitude = data['latitude'];
+var longitude = data['longitude'];
+document.getElementById('y_lat').innerHTML = "<p id='y_lat'>Your latitude : " + data['latitude'] + "°</p>";
+document.getElementById('y_lon').innerHTML = "<p id='y_lat'>Your longitude : " + data['longitude'] + "°</p>";
+prev_get('http://api.open-notify.org/iss-pass.json?lat=43.5167&lon=4.9833&n=1', function(data) {
+  alert('ok');
+  var response = data['response'];
+  var prevision = response['0'];
+  var duration = prevision['duration'];
+  var timestamp = prevision['timestamp'];
+  alert(prevision);
+  document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + duration + " seconds</p>";
+});
+});
+});
 
 
 
