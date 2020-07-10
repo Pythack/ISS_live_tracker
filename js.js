@@ -44,4 +44,4 @@ document.getElementById('solar_lat_table').innerHTML = "<p id='solar_lat_table'>
 document.getElementById('solar_lon_table').innerHTML = "<p id='solar_lon_table'>Solar longitude : " + data['solar_lon'] + "°</p>";
 });
 }
-var t=setInterval(actualize,1500);
+var t=setInterval(actualize,1000);
