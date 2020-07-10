@@ -46,9 +46,6 @@ h1 {
 
 @font-face {
 	font-family: 'OpenSansRegular';
-	src: url('./OpenSansRegular.eot');
-	src: local('OpenSansRegular'), url('./OpenSansRegular.woff') format('woff'), url('./OpenSansRegular.ttf') format('truetype');
-}
-.fontsforweb_fontid_16804 {
-	font-family: 'OpenSansRegular' !important;
+	src: url('./font/OpenSansRegular.eot');
+	src: local('font/OpenSansRegular'), url('./font/OpenSansRegular.woff') format('woff'), url('./font/OpenSansRegular.ttf') format('truetype');
 }
