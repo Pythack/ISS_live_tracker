@@ -45,13 +45,6 @@ h1 {
   box-shadow: 2px 2px #001c65;
 }
 
-#map {
-  position: absolute;
-  top: 10cm;
-  left: 15cm;
-  height: 400px;
-  width: 100%;
-}
 
 @font-face {
 	font-family: 'androidnationb';
