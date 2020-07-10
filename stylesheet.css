@@ -2,19 +2,47 @@
 
 body {
   font-family: androidnationb;
+  color: #cccccc;
+}
+
+html {
+  background-color: #001a5c;
 }
 
 h1 {
   position: absolute;
-  top: 4cm;
-  left: 1cm;
+  top: 0.5cm;
+  left: 19cm;
   font-size: 30;
+  color: #cccccc;
 }
 
 #info_div {
   position: absolute;
-  top: 8cm;
+  top: 3cm;
   left: 1cm;
+  font-size: 23;
+  background-color: #00278b;
+  border-radius: 30px;
+  width: 22cm;
+  height: 9.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  box-shadow: 2px 2px #001c65;
+}
+
+#map_div {
+  position: absolute;
+  top: 3cm;
+  right: 1cm;
+  font-size: 23;
+  background-color: #00278b;
+  border-radius: 30px;
+  width: 22cm;
+  height: 9.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  box-shadow: 2px 2px #001c65;
 }
 
 #map {
