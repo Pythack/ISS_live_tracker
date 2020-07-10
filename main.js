@@ -93,7 +93,7 @@ document.getElementById('y_lon').innerHTML = "<p id='y_lat'>Your longitude : " +
 prev_get('http://api.open-notify.org/iss-pass.json?lat=43.5167&lon=4.9833&n=1', function(data) {
   alert('ok');
   var response = data['response'];
-  var prevision = response['0'];
+  var prevision = response[0];
   var duration = prevision['duration'];
   var timestamp = prevision['timestamp'];
   alert(prevision);
