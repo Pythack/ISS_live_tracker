@@ -49,7 +49,7 @@ ajax_get('https://api.wheretheiss.at/v1/satellites/25544', function(data) {
   document.getElementById('solar_lon_table').innerHTML = "<p id='solar_lon_table'>Solar longitude : " + data['solar_lon'] + "°</p>";
 });
 }
-var t=setInterval(actualize,3000);
+var t=setInterval(actualize,1500);
   </script>
 </head>
 <body>
