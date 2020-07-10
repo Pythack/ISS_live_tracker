@@ -1,5 +1,5 @@
 body {
-  font-family: androidnationb;
+  font-family: OpenSansRegular;
   color: #cccccc;
 }
 
@@ -45,10 +45,10 @@ h1 {
 
 
 @font-face {
-	font-family: 'androidnationb';
-	src: url('./fonts/androidnationb.eot');
-	src: local('androidnationb'), url('./fonts/androidnationb.woff') format('woff'), url('./fonts/androidnationb.ttf') format('truetype');
+	font-family: 'OpenSansRegular';
+	src: url('./OpenSansRegular.eot');
+	src: local('OpenSansRegular'), url('./OpenSansRegular.woff') format('woff'), url('./OpenSansRegular.ttf') format('truetype');
 }
-.fontsforweb_fontid_767 {
-	font-family: 'androidnationb' !important;
+.fontsforweb_fontid_16804 {
+	font-family: 'OpenSansRegular' !important;
 }
