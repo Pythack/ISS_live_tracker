@@ -4,6 +4,18 @@
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/PNG" href="icon.png">
   <script src="main.js"></script>
+  <script src="http://www.webglearth.com/v2/api.js"></script>
+    <script>
+      function initialize() {
+        var options = {atmosphere: true, center: [0, 0], zoom: 0};
+        var earth = new WE.map('earth_div', options);
+        WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
+          minZoom: 0,
+          maxZoom: 5,
+          attribution: 'NASA'
+        }).addTo(earth);
+      }
+    </script>
 </head>
 <body onload="format()">
   <h1 id="title">ISS live tracking</h1>
