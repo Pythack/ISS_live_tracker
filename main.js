@@ -83,6 +83,28 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
 
+function astros_get(url, callback) {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //alert('responseText: ' + xmlhttp.responseText);
+    try {
+        var astro = JSON.parse(xmlhttp.responseText);
+        //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
+        //alert(headers['X-Rate-Limit-Remaining']);
+    } catch(err) {
+        alert(err.message + " in " + xmlhttp.responseText);
+        return;
+    }
+    callback(astro);
+}
+
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+}
+
 function timestamp_get(url, callback) {
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -129,7 +151,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
 });
 });
 
-prev_get('http://api.open-notify.org/astros.json', function(data) {
+astros_get('http://api.open-notify.org/astros.json', function(data) {
     alert(data);
 });
 
