@@ -33,7 +33,7 @@ h1 {
   position: absolute;
   bottom: 1cm;
   right: 1cm;
-  font-size: 23;
+  font-size: 20;
   background-color: #00278b;
   border-radius: 30px;
   width: 10cm;
@@ -43,9 +43,6 @@ h1 {
   box-shadow: 2px 2px #001c65;
 }
 
-#next_next_pass {
-  font-size: 20;
-}
 
 
 @font-face {
