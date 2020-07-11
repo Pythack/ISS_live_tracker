@@ -121,11 +121,10 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
     document.getElementById('next_pass').innerHTML = "<p id='next_pass'>Next pass : " + data + "</p>";
   });
   document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + duration + " seconds</p>";
-   var prevision = response['0'];
    var start = prevision['startAz'];
    var end = prevision['endAz'];
-   document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + start + " </p>";
-   document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + end + "</p>";
+   document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + start + "°</p>";
+   document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + end + "°</p>";
 });
 });
 });
