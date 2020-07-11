@@ -6,8 +6,16 @@
   <script src="main.js"></script>
   <script src="three.min.js"></script>
 <script src="gio.min.js"></script> 
+  <script>
+    function ini() {
+        var container = document.getElementById( "globalArea" );
+        var controller = new GIO.Controller( container );
+        controller.addData( data );
+        controller.init();
+    }
+</script> 
 </head>
-<body>
+<body onload="ini()">
   <h1 id="title">ISS live tracking</h1>
   <div id='info_div'>
       <h2>Basic infos</h2>
@@ -29,11 +37,5 @@
     <p id="next_next_pass_duration">Next next pass duration : Calculating... </p>
   </div>
   <div id="globeArea" style="width: 200px; height: 200px"></div>
-  <script>
-        var container = document.getElementById( "globalArea" );
-        var controller = new GIO.Controller( container );
-        controller.addData( data );
-        controller.init();
-</script> 
 </body>
 </html>
