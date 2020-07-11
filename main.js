@@ -119,12 +119,12 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
   var timestamp = prevision['startUTC'];
   var sA = prevision['startAz'];
   var eA = prevision['endAz'];
+  document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + sA + "°</p>";
+  document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + eA + "°</p>";
   timestamp_get('https://showcase.api.linx.twenty57.net/UnixTime/fromunix?timestamp=' + timestamp, function(data) {
     document.getElementById('next_pass').innerHTML = "<p id='next_pass'>Next pass : " + data + "</p>";
   });
   document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + duration + " seconds</p>";
-  document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + sA + "°</p>";
-  document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + eA + "°</p>";
   });
 });
 });
