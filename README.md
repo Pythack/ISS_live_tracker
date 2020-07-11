@@ -1,4 +1,5 @@
 # ISS_live_tracker
+**This project uses your location to predict the ISS' future passes over your head, we respect your privacy and do not sell those informations. **
 
 You can access the web page <a href="https://pythack.github.io/ISS_live_tracker/">here</a>. 
 
