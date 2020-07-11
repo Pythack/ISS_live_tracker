@@ -113,6 +113,7 @@ var longitude = data['longitude'];
 //document.getElementById('y_lat').innerHTML = "<p id='y_lat'>Your latitude : " + data['latitude'] + "°</p>";
 //document.getElementById('y_lon').innerHTML = "<p id='y_lat'>Your longitude : " + data['longitude'] + "°</p>";
 prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['latitude'] + '/' + data['longitude'] + '/10/10/1/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
+  alert('ok');
   var response = data['passes'];
   var prevision = response['0'];
   var duration = prevision['duration'];
