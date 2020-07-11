@@ -43,6 +43,10 @@ h1 {
   box-shadow: 2px 2px #001c65;
 }
 
+#next_next_pass {
+  font-size: 18;
+}
+
 
 @font-face {
 	font-family: 'OpenSansRegular';
