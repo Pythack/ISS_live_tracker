@@ -124,6 +124,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
    var prevision = response['1'];
    var duration = prevision['duration'];
    var timestamp = prevision['startUTC'];
+   alert('ok');
    document.getElementById('next_next_pass_duration').innerHTML = "<p id='next_next_pass_duration'>Next next pass duration : " + duration + " seconds</p>";
     timestamp_get('https://showcase.api.linx.twenty57.net/UnixTime/fromunix?timestamp=' + timestamp, function(data) {
     document.getElementById('next_next_pass').innerHTML = "<p id='next__next_pass'>Next next pass : " + data + "</p>";
