@@ -4,8 +4,6 @@
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/PNG" href="icon.png">
   <script src="main.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r63/three.min.js"></script>
-  <script src="https://giojs.org/assets/jsLib/gio.min.js"></script> 
 </head>
 <body>
   <h1 id="title">ISS live tracking</h1>
@@ -28,12 +26,5 @@
     <p id="next_next_pass">Next next pass : Calculating... </p>
     <p id="next_next_pass_duration">Next next pass duration : Calculating... </p>
   </div>
-  <div id="globeArea" style="width: 200px; height: 200px"></div>
-  <script>
-        var container = document.getElementById( "globalArea" );
-        var controller = new GIO.Controller(container);
-        controller.addData(data);
-        controller.init();
-</script> 
 </body>
 </html>
