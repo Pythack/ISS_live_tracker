@@ -129,6 +129,10 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
 });
 });
 
+prev_get('http://api.open-notify.org/astros.json', function(data) {
+    alert(data);
+});
+
 
 function capitalizeFirstLetter(string) {
 return string.charAt(0).toUpperCase() + string.slice(1);
