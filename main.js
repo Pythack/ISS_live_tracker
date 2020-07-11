@@ -117,6 +117,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
   var prevision = response['0'];
   var duration = prevision['duration'];
   var timestamp = prevision['startUTC'];
+    alert('ok');
   var sA = prevision['startAz'];
   var eA = prevision['endAz'];
   document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + sA + "°</p>";
