@@ -165,6 +165,45 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
 
+function getDeviceType() {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    return "tablet";
+  }
+  if (
+    /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
+    return "mobile";
+  }
+  return "desktop";
+}
+
+function format(page) {
+  var device_type = getDeviceType();
+  if (page == "login") {
+  if (device_type == "mobile") {
+    document.getElementById('login').style.top = "12cm";
+    document.getElementById('login').style.left = "9cm";
+  }
+  if (device_type == "tablet") {
+    alert('This is a tablet!');
+  }
+}
+if (page == "home") {
+  if (device_type == "mobile") {
+    document.getElementById('login').style.top = "12cm";
+    document.getElementById('login').style.left = "9cm";
+    document.getElementById('icon').style.left = "11cm";
+    document.getElementById('icon').style.top = "30px";
+  }
+  if (device_type == "tablet") {
+    alert('This is a tablet!');
+  }
+}
+}
+
 ip_get('https://api.ipify.org/', function(data) {
 var ip = data;
 loc_get('https://ipapi.co/' + ip + '/json', function(data) {
