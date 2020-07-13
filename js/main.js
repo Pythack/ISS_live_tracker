@@ -183,8 +183,8 @@ function getDeviceType() {
 function format() {
   var device_type = getDeviceType();
   if (device_type == "mobile") {
-    document.getElementById('login').style.top = "12cm";
-    document.getElementById('login').style.left = "9cm";
+    document.getElementById('info_div').style.top = "10cm";
+    document.getElementById('pred_div').style.top = "15cm";
   }
   if (device_type == "tablet") {
     alert('This is a tablet!');
