@@ -180,9 +180,8 @@ function getDeviceType() {
   return "desktop";
 }
 
-function format(page) {
+function format() {
   var device_type = getDeviceType();
-  if (page == "login") {
   if (device_type == "mobile") {
     document.getElementById('login').style.top = "12cm";
     document.getElementById('login').style.left = "9cm";
@@ -190,18 +189,6 @@ function format(page) {
   if (device_type == "tablet") {
     alert('This is a tablet!');
   }
-}
-if (page == "home") {
-  if (device_type == "mobile") {
-    document.getElementById('login').style.top = "12cm";
-    document.getElementById('login').style.left = "9cm";
-    document.getElementById('icon').style.left = "11cm";
-    document.getElementById('icon').style.top = "30px";
-  }
-  if (device_type == "tablet") {
-    alert('This is a tablet!');
-  }
-}
 }
 
 ip_get('https://api.ipify.org/', function(data) {
