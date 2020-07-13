@@ -34,7 +34,7 @@ h1 {
 
 #pred_div {
   position: absolute;
-  bottom: 6cm;
+  top: 10cm;
   right: 1cm;
   font-size: 20;
   background-color: #127aba;
