@@ -54,12 +54,12 @@ h1 {
 
 .webgl-error a {
     color: #fff;
-    position: absolute;
-    left: 10cm;
 };
 
 #webgl {
     margin-left: 10px;
+    position: absolute;
+    left: 10cm;
 }
 
 
