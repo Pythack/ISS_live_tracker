@@ -57,8 +57,7 @@ h1 {
 };
 
 #webgl {
-    position: absolute;
-    left: 1cm;
+    margin-left: 10px;
 }
 
 
