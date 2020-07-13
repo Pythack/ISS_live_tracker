@@ -29,6 +29,7 @@ h1 {
   padding: 20px;
   padding-left: 50px;
   box-shadow: 7px 7px 8px #001342;
+  opacity: 75%;
 }
 
 #pred_div {
@@ -43,6 +44,7 @@ h1 {
   padding: 20px;
   padding-left: 50px;
   box-shadow: 7px 7px 8px #001342;
+  opacity: 75%;
 }
 
 .webgl-error {
