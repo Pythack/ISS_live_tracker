@@ -9,5 +9,5 @@ This project allows you to know basic informations about the ISS' location, like
 # Predictions
 This project allows you to know when the ISS will be in your sight, how many seconds it will be visible, the passage's start azimuth and it's end azimuth.
 
-#Earth 3D model
-For the Earth 3D model, we use webGL. 
+# Earth 3D model
+For the Earth interactive 3D model, we use webGL. 
