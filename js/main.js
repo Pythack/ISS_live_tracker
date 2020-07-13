@@ -172,7 +172,7 @@ var latitude = data['latitude'];
 var longitude = data['longitude'];
 //document.getElementById('y_lat').innerHTML = "<p id='y_lat'>Your latitude : " + data['latitude'] + "°</p>";
 //document.getElementById('y_lon').innerHTML = "<p id='y_lat'>Your longitude : " + data['longitude'] + "°</p>";
-prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['latitude'] + '/' + data['longitude'] + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
+prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['latitude'] + '/' + data['longitude'] + '/10/10/660/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
   var response = data['passes'];
   var prevision = response['0'];
   var duration = prevision['duration'];
