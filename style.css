@@ -28,7 +28,7 @@ h1 {
   height: 9.5cm;
   padding: 20px;
   padding-left: 50px;
-  box-shadow: 7px 7px 8px #00288d;
+  box-shadow: 7px 7px 8px #848484;
   opacity: 75%;
 }
 
@@ -37,7 +37,7 @@ h1 {
   bottom: 1cm;
   right: 1cm;
   font-size: 20;
-  background-color: #848484;
+  background-color: #127aba;
   border-radius: 30px;
   width: 10cm;
   height: 7.5cm;
