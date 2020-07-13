@@ -185,6 +185,7 @@ function format() {
   if (device_type == "mobile") {
     document.getElementById('info_div').style.top = "10cm";
     document.getElementById('pred_div').style.top = "15cm";
+    document.getElementById('title').style.left = "0cm";
   }
   if (device_type == "tablet") {
     alert('This is a tablet!');
