@@ -14,12 +14,30 @@
 	// Earth params
 	var radius   = 0.5,
 		segments = 32,
-		rotation = 6;  
+		rotation = 6;
 
 	var scene = new THREE.Scene();
 
 	var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 1000);
-	camera.position.z = 1.5;
+	function getDeviceType() {
+	  const ua = navigator.userAgent;
+	  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+	    return "tablet";
+	  }
+	  if (
+	    /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+	      ua
+	    )
+	  ) {
+	    return "mobile";
+	  }
+	  return "desktop";
+	}
+		camera.position.z = 1.5;
+	if (getDeviceType() == "mobile") {
+		camera.position.z = 2;
+	}
+
 
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize(width, height);
@@ -31,7 +49,7 @@
 	scene.add(light);
 
     var sphere = createSphere(radius, segments);
-	sphere.rotation.y = rotation; 
+	sphere.rotation.y = rotation;
 	scene.add(sphere)
 
     var clouds = createClouds(radius, segments);
@@ -50,7 +68,7 @@
 	function render() {
 		controls.update();
 		sphere.rotation.y += 0.0005;
-		clouds.rotation.y += 0.0005;		
+		clouds.rotation.y += 0.0005;
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 	}
@@ -63,26 +81,26 @@
 				bumpMap:     THREE.ImageUtils.loadTexture('images/elev_bump_4k.jpg'),
 				bumpScale:   0.005,
 				specularMap: THREE.ImageUtils.loadTexture('images/water_4k.png'),
-				specular:    new THREE.Color('grey')								
+				specular:    new THREE.Color('grey')
 			})
 		);
 	}
 
 	function createClouds(radius, segments) {
 		return new THREE.Mesh(
-			new THREE.SphereGeometry(radius + 0.003, segments, segments),			
+			new THREE.SphereGeometry(radius + 0.003, segments, segments),
 			new THREE.MeshPhongMaterial({
 				map:         THREE.ImageUtils.loadTexture('images/fair_clouds_4k.png'),
 				transparent: true
 			})
-		);		
+		);
 	}
 
 	function createStars(radius, segments) {
 		return new THREE.Mesh(
-			new THREE.SphereGeometry(radius, segments, segments), 
+			new THREE.SphereGeometry(radius, segments, segments),
 			new THREE.MeshBasicMaterial({
-				map:  THREE.ImageUtils.loadTexture('images/galaxy_starfield.png'), 
+				map:  THREE.ImageUtils.loadTexture('images/galaxy_starfield.png'),
 				side: THREE.BackSide
 			})
 		);
