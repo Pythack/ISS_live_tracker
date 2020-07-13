@@ -1,0 +1,84 @@
+
+
+body { 
+    cursor: none;
+    margin: 0; 
+    overflow: hidden; 
+    background-color: #161616; 
+}
+        
+.webgl-error { 
+    font: 15px/30px monospace; 
+    text-align: center; 
+    color: #fff; 
+    margin: 50px; 
+}
+
+.webgl-error a { 
+    color: #fff; 
+};
+        
+#webgl { 
+    margin-left: 10px;
+}
+
+
+/*------/ Cursor /------*/
+.cursor{
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+  
+    transition: transform 0.2s;
+  }
+  
+
+/*------/ Prelaoder /------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #161616;
+  }
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #0078ff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+  }
+  
+  @-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
