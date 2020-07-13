@@ -1,24 +1,62 @@
 
 
-body { 
+body {
     cursor: none;
-    margin: 0; 
-    overflow: hidden; 
-    background-color: #161616; 
-}
-        
-.webgl-error { 
-    font: 15px/30px monospace; 
-    text-align: center; 
-    color: #fff; 
-    margin: 50px; 
+    margin: 0;
+    overflow: hidden;
+    /*background-color: #161616;*/
+    font-family: OpenSansRegular;
+    color: #cccccc;
 }
 
-.webgl-error a { 
-    color: #fff; 
+h1 {
+  position: absolute;
+  top: 0.5cm;
+  left: 22cm;
+  font-size: 30;
+  color: #cccccc;
+}
+
+#info_div {
+  position: absolute;
+  top: 3cm;
+  right: 1cm;
+  font-size: 17;
+  background-color: #00278b;
+  border-radius: 30px;
+  width: 10cm;
+  height: 9.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  box-shadow: 7px 7px 8px #001342;
+}
+
+#pred_div {
+  position: absolute;
+  bottom: 1cm;
+  right: 1cm;
+  font-size: 20;
+  background-color: #00278b;
+  border-radius: 30px;
+  width: 10cm;
+  height: 7.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  box-shadow: 7px 7px 8px #001342;
+}
+
+.webgl-error {
+    font: 15px/30px monospace;
+    text-align: center;
+    color: #fff;
+    margin: 50px;
+}
+
+.webgl-error a {
+    color: #fff;
 };
-        
-#webgl { 
+
+#webgl {
     margin-left: 10px;
 }
 
@@ -33,10 +71,10 @@ body {
     pointer-events: none;
     mix-blend-mode: difference;
     z-index: 999;
-  
+
     transition: transform 0.2s;
   }
-  
+
 
 /*------/ Prelaoder /------*/
 #preloader {
@@ -49,7 +87,7 @@ body {
     overflow: hidden;
     background: #161616;
   }
-  
+
   #preloader:before {
     content: "";
     position: fixed;
@@ -63,7 +101,7 @@ body {
     -webkit-animation: animate-preloader 1s linear infinite;
     animation: animate-preloader 1s linear infinite;
   }
-  
+
   @-webkit-keyframes animate-preloader {
     0% {
       transform: rotate(0deg);
@@ -72,7 +110,7 @@ body {
       transform: rotate(360deg);
     }
   }
-  
+
   @keyframes animate-preloader {
     0% {
       transform: rotate(0deg);
@@ -81,4 +119,9 @@ body {
       transform: rotate(360deg);
     }
   }
-  
+
+  @font-face {
+  	font-family: 'OpenSansRegular';
+  	src: url('./fonts/OpenSansRegular.eot');
+  	src: local('fonts/OpenSansRegular'), url('./fonts/OpenSansRegular.woff') format('woff'), url('./fonts/OpenSansRegular.ttf') format('truetype');
+  }
