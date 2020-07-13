@@ -190,7 +190,7 @@ function format() {
   if (device_type == "tablet") {
     alert('This is a tablet!');
   }
-  alert(device_type);
+  alert('1');
 }
 
 ip_get('https://api.ipify.org/', function(data) {
