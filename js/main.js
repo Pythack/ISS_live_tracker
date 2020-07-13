@@ -184,9 +184,9 @@ function format() {
   var device_type = getDeviceType();
   if (device_type == "mobile") {
     document.getElementById('info_div').style.top = "15cm";
-    document.getElementById('info_div').style.left = "3cm";
+    document.getElementById('info_div').style.left = "1cm";
     document.getElementById('pred_div').style.top = "20cm";
-    document.getElementById('pred_div').style.left = "3cm";
+    document.getElementById('pred_div').style.left = "1cm";
     document.getElementById('title').style.left = "3cm";
   }
   if (device_type == "tablet") {
