@@ -46,7 +46,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        alert(err.message + " in " + xmlhttp.responseText);
+        console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
     callback(data_iss);
@@ -67,7 +67,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        alert(err.message + " in " + xmlhttp.responseText);
+        console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
     callback(ip);
@@ -88,7 +88,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        alert(err.message + " in " + xmlhttp.responseText);
+        console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
     callback(loc);
@@ -109,7 +109,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        alert(err.message + " in " + xmlhttp.responseText);
+        console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
     callback(prevision);
@@ -131,7 +131,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        alert(err.message + " in " + xmlhttp.responseText);
+        console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
     callback(astro);
@@ -153,7 +153,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        alert(err.message + " in " + xmlhttp.responseText);
+        console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
     callback(date);
@@ -168,6 +168,7 @@ xmlhttp.send();
 function getDeviceType() {
   const ua = navigator.userAgent;
   if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    console.log('Detected device type : tablet');
     return "tablet";
   }
   if (
@@ -175,8 +176,10 @@ function getDeviceType() {
       ua
     )
   ) {
+    console.log('Detected device type : mobile');
     return "mobile";
   }
+  console.log('Detected device type : desktop');
   return "desktop";
 }
 
@@ -219,7 +222,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
 });
 
 astros_get('http://api.open-notify.org/astros.json', function(data) {
-    alert(data);
+    console.log(data);
 });
 
 
