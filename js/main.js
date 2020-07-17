@@ -199,12 +199,13 @@ function format() {
 
 ip_get('https://api.ipify.org/', function(data) {
 var ip = data;
-loc_get('https://ipapi.co/' + ip + '/json', function(data) {
-var latitude = data['latitude'];
-var longitude = data['longitude'];
-//document.getElementById('y_lat').innerHTML = "<p id='y_lat'>Your latitude : " + data['latitude'] + "°</p>";
-//document.getElementById('y_lon').innerHTML = "<p id='y_lat'>Your longitude : " + data['longitude'] + "°</p>";
-prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['latitude'] + '/' + data['longitude'] + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
+localStorage.setItem('ip', ip);
+});
+loc_get('https://ipapi.co/' + localStorage.getItem('ip') + '/json', function(data) {
+localStorage.setItem('device_latitude', data['latitude']);
+localStorage.setItem('device_longitude', data['longitude']);
+});
+prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localStorage.getItem('device_latitude') + '/' + localStorage.getItem('device_longitude') + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
   var response = data['passes'];
   var prevision = response['0'];
   var duration = prevision['duration'];
@@ -217,8 +218,6 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + data['la
    var end = prevision['endAz'];
    document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + start + "°</p>";
    document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + end + "°</p>";
-});
-});
 });
 
 astros_get('http://api.open-notify.org/astros.json', function(data) {
