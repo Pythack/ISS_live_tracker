@@ -219,7 +219,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
   });
   document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + localStorage.getItem('next_pass_duration') + " seconds</p>";
    localStorage.setItem('next_pass_start_azimuth', prevision['startAz']);
-   localStorage.set('next_pass_end_azimuth', prevision['endAz']);
+   localStorage.setItem('next_pass_end_azimuth', prevision['endAz']);
    document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + localStorage.getItem('next_pass_start_azimuth') + "°</p>";
    document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
 });
