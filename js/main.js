@@ -228,7 +228,8 @@ astros_get('http://api.open-notify.org/astros.json', function(data) {
     var table = document.getElementById("astros_table");
     var people = data['people'];
     for (p in people) {
-    var astro = p['name'];
+    var astro = people[p];
+    var astro = astro['name'];
     var row = table.insertRow(-1);
     var cell = row.insertCell(0);
     cell.innerHTML = people;
