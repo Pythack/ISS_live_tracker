@@ -227,7 +227,7 @@ astros_get('http://api.open-notify.org/astros.json', function(data) {
   if (message != 'success') {
     setTimeout(console.warn("Please desactivate security on this page the reload to access astronauts data. "), 1000);
     document.getElementById('astros_div').style.display = "none";
-  }
+  } else {
     document.getElementById('astros_num').innerHTML = '<p id="astros_num">Number of astronauts actually in the ISS : ' + data['number'] + '</p>';
     var table = document.getElementById("astros_table");
     var people = data['people'];
@@ -237,6 +237,7 @@ astros_get('http://api.open-notify.org/astros.json', function(data) {
     var row = table.insertRow(-1);
     var cell = row.insertCell(0);
     cell.innerHTML = astro;
+  }
   }
 });
 
