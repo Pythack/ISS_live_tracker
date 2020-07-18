@@ -132,6 +132,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
         console.warn("Please desactivate security on this page the reload to access astronauts data. ");
+        document.getElementById('astros_div').style.display = "none";
         return;
     }
     callback(astro);
