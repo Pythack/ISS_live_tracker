@@ -47,6 +47,10 @@ h1 {
   opacity: 75%;
 }
 
+#info_btn {
+  cursor: none;
+}
+
 #astros_div {
   position: absolute;
   top: 3cm;
