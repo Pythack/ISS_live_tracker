@@ -135,10 +135,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         return;
     }
     callback(astro);
-} else {
-  console.warn('Please desactivate securisation of the page to access astronautes infos. ');
 }
-
 };
 
 xmlhttp.open("GET", url, true);
