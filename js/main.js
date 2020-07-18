@@ -225,11 +225,10 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
 });
 
 astros_get('http://api.open-notify.org/astros.json', function(data, response) {
-  console.log(response['status']);
-  if (response != 200) {
+  if (location.protocol !== 'https:') {
     setTimeout(console.warn("Please desactivate security on this page the reload to access astronauts data. "), 1000);
     document.getElementById('astros_div').style.display = "none";
-  } else {
+} else {
     document.getElementById('astros_num').innerHTML = '<p id="astros_num">Number of astronauts actually in the ISS : ' + data['number'] + '</p>';
     var table = document.getElementById("astros_table");
     var people = data['people'];
