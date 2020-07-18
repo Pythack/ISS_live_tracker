@@ -224,11 +224,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
    document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
 });
 
-if (location.protocol == 'https:') {
-  console.warn("Please desactivate security on this page the reload to access astronauts data. ");
-  document.getElementById('astros_div').style.display = "none";
-} else {
-  astros_get('http://api.open-notify.org/astros.json', function(data, response) {
+astros_get('http://api.open-notify.org/astros.json', function(data, response) {
       document.getElementById('astros_num').innerHTML = '<p id="astros_num">Number of astronauts actually in the ISS : ' + data['number'] + '</p>';
       var table = document.getElementById("astros_table");
       var people = data['people'];
@@ -240,7 +236,6 @@ if (location.protocol == 'https:') {
       cell.innerHTML = astro;
     }
   });
-}
 
 
 function capitalizeFirstLetter(string) {
