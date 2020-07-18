@@ -225,7 +225,13 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
 });
 
 astros_get('http://api.open-notify.org/astros.json', function(data) {
-    console.log(data);
+    var table = document.getElementById("astros_table");
+    var row = table.insertRow(-1);
+    var cell = row.insertCell(0);
+    var people = data['people'];
+    var people = people[0];
+    var people = people['name'];
+    cell1.innerHTML = people;
 });
 
 
