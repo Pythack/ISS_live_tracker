@@ -127,6 +127,7 @@ xmlhttp.onreadystatechange = function() {
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
     //alert('responseText: ' + xmlhttp.responseText);
     try {
+        var response = xmlhttp;
         var astro = JSON.parse(xmlhttp.responseText);
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
@@ -134,7 +135,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         console.warn(err.message + " in " + xmlhttp.responseText);
         return;
     }
-    callback(astro);
+    callback(astro, response);
 }
 };
 
@@ -223,8 +224,8 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
    document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
 });
 
-astros_get('http://api.open-notify.org/astros.json', function(data) {
-  if (data['message'] != 'success') {
+astros_get('http://api.open-notify.org/astros.json', function(data, response) {
+  if (response != 200) {
     setTimeout(console.warn("Please desactivate security on this page the reload to access astronauts data. "), 1000);
     document.getElementById('astros_div').style.display = "none";
   } else {
