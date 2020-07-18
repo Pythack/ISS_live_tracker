@@ -228,14 +228,11 @@ astros_get('http://api.open-notify.org/astros.json', function(data) {
     var table = document.getElementById("astros_table");
     var people = data['people'];
     for (p in people) {
-    console.log(p);
     var astro = people[p];
-    console.log(astro);
     var astro = astro['name'];
-    console.log(astro);
     var row = table.insertRow(-1);
     var cell = row.insertCell(0);
-    cell.innerHTML = people;
+    cell.innerHTML = astro;
   }
 });
 
