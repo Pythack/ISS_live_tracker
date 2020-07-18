@@ -227,7 +227,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
 });
 
 astros_get('http://api.open-notify.org/astros.json', function(data) {
-    document.getElementById('astros_num').innerHTML = '5';
+    document.getElementById('astros_num').innerHTML = data['number'];
     var table = document.getElementById("astros_table");
     var row = table.insertRow(-1);
     var cell = row.insertCell(0);
