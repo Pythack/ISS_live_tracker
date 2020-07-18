@@ -233,7 +233,7 @@ astros_get('http://api.open-notify.org/astros.json', function(data) {
     var people = data['people'];
     var people = people[0];
     var people = people['name'];
-    cell1.innerHTML = people;
+    cell.innerHTML = people;
 });
 
 
