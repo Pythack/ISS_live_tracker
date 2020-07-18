@@ -224,7 +224,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
 });
 
 astros_get('http://api.open-notify.org/astros.json', function(data) {
-  if (message != 'success') {
+  if (data['message'] != 'success') {
     setTimeout(console.warn("Please desactivate security on this page the reload to access astronauts data. "), 1000);
     document.getElementById('astros_div').style.display = "none";
   } else {
