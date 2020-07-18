@@ -131,7 +131,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         //var headers = xmlhttp.getAllResponseHeaders().toLowerCase();
         //alert(headers['X-Rate-Limit-Remaining']);
     } catch(err) {
-        console.warn(err.message + " in " + xmlhttp.responseText);
+        console.warn("Please desactivate security on this page the reload to access astronauts data. ");
         return;
     }
     callback(astro);
