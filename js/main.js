@@ -223,6 +223,8 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
    document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + localStorage.getItem('next_pass_start_azimuth') + "°</p>";
    document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
 });
+
+console.clear();
 if (location.protocol == 'https:') {
   console.warn("Please desactivate security on this page the reload to access astronauts data. ");
   document.getElementById('astros_div').style.display = "none";
