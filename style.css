@@ -49,6 +49,8 @@ h1 {
 
 #info_btn {
   cursor: none;
+  border-radius: 30px;
+  background-color: orange;
 }
 
 #astros_div {
