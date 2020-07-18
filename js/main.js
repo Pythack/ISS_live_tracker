@@ -226,6 +226,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
 
 astros_get('http://api.open-notify.org/astros.json', function(data, response) {
       document.getElementById('astros_num').innerHTML = '<p id="astros_num">Number of astronauts actually in the ISS : ' + data['number'] + '</p>';
+      document.getElementById('info_btn').style.display = 'none';
       var table = document.getElementById("astros_table");
       var people = data['people'];
       for (p in people) {
