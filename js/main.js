@@ -224,7 +224,7 @@ prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localSto
    document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
 });
 
-if (location.protocol === 'https:') {
+if (location.protocol == 'https:') {
   setTimeout(console.warn("Please desactivate security on this page the reload to access astronauts data. "), 1000);
   document.getElementById('astros_div').style.display = "none";
 } else {
