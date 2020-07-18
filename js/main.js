@@ -237,6 +237,11 @@ astros_get('http://api.open-notify.org/astros.json', function(data, response) {
     }
   });
 
+function explications() {
+  var text = "The web page we are retrieving the atronauts data from is not secure, so your browser automatically blocks the request. If you desactivate the security of this page, your browser won't block the request anymore. To desactivate the security, click on the lock near your address bar, and then the arrow to the right, then click 'Disable protection for now'. ";
+  alert(text);
+}
+
 
 function capitalizeFirstLetter(string) {
 return string.charAt(0).toUpperCase() + string.slice(1);
