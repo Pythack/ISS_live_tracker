@@ -1,0 +1,157 @@
+
+
+body {
+    cursor: none;
+    margin: 0;
+    overflow: hidden;
+    /*background-color: #161616;*/
+    font-family: OpenSansRegular;
+    color: #cccccc;
+}
+
+h1 {
+  position: absolute;
+  top: 0.5cm;
+  left: 22cm;
+  font-size: 30;
+  color: #cccccc;
+}
+
+#info_div {
+  position: absolute;
+  top: 3cm;
+  right: 1cm;
+  font-size: 17;
+  background-color: #127aba;
+  border-radius: 30px;
+  width: 10cm;
+  height: 7.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  /*box-shadow: 7px 7px 8px #848484;*/
+  opacity: 75%;
+}
+
+#pred_div {
+  position: absolute;
+  bottom: 1cm;
+  right: 1cm;
+  font-size: 20;
+  background-color: #127aba;
+  border-radius: 30px;
+  width: 10cm;
+  height: 7.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  /*box-shadow: 7px 7px 8px #848484;*/
+  opacity: 75%;
+}
+
+#info_btn {
+  cursor: none;
+}
+
+#astros_div {
+  position: absolute;
+  top: 3cm;
+  left: 1cm;
+  font-size: 20;
+  background-color: #127aba;
+  border-radius: 30px;
+  width: 11cm;
+  height: 7.5cm;
+  padding: 20px;
+  padding-left: 50px;
+  /*box-shadow: 7px 7px 8px #848484;*/
+  opacity: 75%;
+}
+
+.webgl-error {
+    font: 15px/30px monospace;
+    text-align: center;
+    color: #fff;
+    margin: 50px;
+}
+
+.webgl-error a {
+    color: #fff;
+};
+
+#webgl {
+    margin-left: 10px;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+
+/*------/ Cursor /------*/
+.cursor{
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+
+    transition: transform 0.2s;
+  }
+
+
+/*------/ Preloader /------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #161616;
+  }
+
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #0078ff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+  }
+
+  @-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @font-face {
+  	font-family: 'OpenSansRegular';
+  	src: url('./fonts/OpenSansRegular.eot');
+  	src: local('fonts/OpenSansRegular'), url('./fonts/OpenSansRegular.woff') format('woff'), url('./fonts/OpenSansRegular.ttf') format('truetype');
+  }
