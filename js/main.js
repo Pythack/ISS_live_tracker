@@ -192,7 +192,7 @@ function format() {
     document.getElementById('stylesheet').setAttribute('href', 'mobile.css');
   }
   if (device_type == "tablet") {
-    alert('This is a tablet!');
+    document.getElementById('stylesheet').setAttribute('href', 'tablet.css');
   }
 }
 
