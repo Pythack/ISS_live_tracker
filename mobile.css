@@ -19,13 +19,13 @@ h1 {
   position: absolute;
   top: 1.7cm;
   right: 0.1cm;
-  font-size: auto;
+  font-size: 10;
   background-color: #127aba;
   border-radius: 30px;
   width: 3cm;
-  height: 2cm;
+  height: 5cm;
   padding: 20px;
-  padding-left: 50px;
+  padding-left: 20px;
   /*box-shadow: 7px 7px 8px #848484;*/
   opacity: 75%;
 }
@@ -53,15 +53,19 @@ h1 {
   position: absolute;
   top: 1.7cm;
   left: 0.1cm;
-  font-size: auto;
+  font-size: 10;
   background-color: #127aba;
   border-radius: 30px;
   width: 3cm;
-  height: 2cm;
+  height: 5cm;
   padding: 20px;
-  padding-left: 50px;
+  padding-left: 20px;
   /*box-shadow: 7px 7px 8px #848484;*/
   opacity: 75%;
+}
+
+#astros_table {
+  font-size: 10;
 }
 
 .webgl-error {
@@ -77,6 +81,7 @@ h1 {
 
 #webgl {
     margin-left: 10px;
+    display: none;
 }
 
 .noselect {
