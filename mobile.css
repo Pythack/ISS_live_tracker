@@ -25,6 +25,7 @@ h1 {
   width: 3cm;
   height: 5cm;
   padding: 20px;
+  padding-top: 0px;
   padding-left: 20px;
   /*box-shadow: 7px 7px 8px #848484;*/
   opacity: 75%;
@@ -59,6 +60,7 @@ h1 {
   width: 3cm;
   height: 5cm;
   padding: 20px;
+  padding-top: 0px;
   padding-left: 20px;
   /*box-shadow: 7px 7px 8px #848484;*/
   opacity: 75%;
