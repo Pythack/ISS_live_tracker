@@ -10,14 +10,14 @@ body {
 h1 {
   position: absolute;
   top: 0.5cm;
-  left: 3cm;
+  left: 2.3cm;
   font-size: 30;
   color: #cccccc;
 }
 
 #info_div {
   position: absolute;
-  top: 1cm;
+  top: 1.7cm;
   right: 0.1cm;
   font-size: auto;
   background-color: #127aba;
@@ -51,7 +51,7 @@ h1 {
 
 #astros_div {
   position: absolute;
-  top: 0.1cm;
+  top: 1.7cm;
   left: 0.1cm;
   font-size: auto;
   background-color: #127aba;
