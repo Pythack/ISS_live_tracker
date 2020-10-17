@@ -33,13 +33,13 @@ h1 {
 
 #pred_div {
   position: absolute;
-  bottom: 0.1cm;
-  right: 0.1cm;
+  top: 8cm;
+  left: 0.1cm;
   font-size: auto;
   background-color: #127aba;
   border-radius: 30px;
-  width: 3cm;
-  height: 2cm;
+  width: 7.9cm;
+  height: 7cm;
   padding: 20px;
   padding-left: 50px;
   /*box-shadow: 7px 7px 8px #848484;*/
