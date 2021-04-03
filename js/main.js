@@ -199,23 +199,24 @@ function format() {
 function successCallback (position) {
   localStorage.setItem('device_latitude', position.coords.latitude);
   localStorage.setItem('device_longitude', position.coords.longitude);
+  prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localStorage.getItem('device_latitude') + '/' + localStorage.getItem('device_longitude') + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
+    var response = data['passes'];
+    var prevision = response['0'];
+    localStorage.setItem('next_pass_duration', prevision['duration']);
+    var timestamp = prevision['startUTC'];
+    timestamp_get('https://showcase.api.linx.twenty57.net/UnixTime/fromunix?timestamp=' + timestamp, function(data) {
+      localStorage.setItem('next_pass_start', data);
+      document.getElementById('next_pass').innerHTML = "<p id='next_pass'>Next pass : " + data + "</p>";
+    });
+    document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + localStorage.getItem('next_pass_duration') + " seconds</p>";
+     localStorage.setItem('next_pass_start_azimuth', prevision['startAz']);
+     localStorage.setItem('next_pass_end_azimuth', prevision['endAz']);
+     document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + localStorage.getItem('next_pass_start_azimuth') + "°</p>";
+     document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
+  });
 }
 navigator.geolocation.getCurrentPosition(successCallback);
-prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localStorage.getItem('device_latitude') + '/' + localStorage.getItem('device_longitude') + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
-  var response = data['passes'];
-  var prevision = response['0'];
-  localStorage.setItem('next_pass_duration', prevision['duration']);
-  var timestamp = prevision['startUTC'];
-  timestamp_get('https://showcase.api.linx.twenty57.net/UnixTime/fromunix?timestamp=' + timestamp, function(data) {
-    localStorage.setItem('next_pass_start', data);
-    document.getElementById('next_pass').innerHTML = "<p id='next_pass'>Next pass : " + data + "</p>";
-  });
-  document.getElementById('next_pass_duration').innerHTML = "<p id='next_pass_duration'>Next pass duration : " + localStorage.getItem('next_pass_duration') + " seconds</p>";
-   localStorage.setItem('next_pass_start_azimuth', prevision['startAz']);
-   localStorage.setItem('next_pass_end_azimuth', prevision['endAz']);
-   document.getElementById('start_az').innerHTML = "<p id='start_az'>Start azimuth : " + localStorage.getItem('next_pass_start_azimuth') + "°</p>";
-   document.getElementById('end_az').innerHTML = "<p id='end_az'>End azimuth : " + localStorage.getItem('next_pass_end_azimuth') + "°</p>";
-});
+
 
 astros_get('http://api.open-notify.org/astros.json', function(data, response) {
       document.getElementById('astros_num').innerHTML = '<p id="astros_num">Number of astronauts actually in the ISS : ' + data['number'] + '</p>';
