@@ -196,14 +196,11 @@ function format() {
   }
 }
 
-ip_get('https://api.ipify.org/', function(data) {
-var ip = data;
-localStorage.setItem('ip', ip);
-});
-loc_get('https://ipapi.co/' + localStorage.getItem('ip') + '/json', function(data) {
-localStorage.setItem('device_latitude', data['latitude']);
-localStorage.setItem('device_longitude', data['longitude']);
-});
+function successCallback (position) {
+  localStorage.setItem('device_latitude', position.coords.latitude);
+  localStorage.setItem('device_longitude', position.coords.longitude);
+}
+navigator.geolocation.getCurrentPosition(successCallback);
 prev_get('https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localStorage.getItem('device_latitude') + '/' + localStorage.getItem('device_longitude') + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
   var response = data['passes'];
   var prevision = response['0'];
