@@ -199,7 +199,7 @@ function format() {
 function successCallback (position) {
   localStorage.setItem('device_latitude', position.coords.latitude);
   localStorage.setItem('device_longitude', position.coords.longitude);
-  prev_get('Request: https://api.n2yo.com/rest/v1/satellite/tle/25544/' + localStorage.getItem('device_latitude') + '/' + localStorage.getItem('device_longitude') + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
+  prev_get('https://api.n2yo.com/rest/v1/satellite/visualpasses/25544/' + localStorage.getItem('device_latitude') + '/' + localStorage.getItem('device_longitude') + '/10/10/300/&apiKey=7VFHXQ-LBZVP5-3Y4ZGN-4HWY', function(data) {
     var response = data['passes'];
     var prevision = response['0'];
     localStorage.setItem('next_pass_duration', prevision['duration']);
